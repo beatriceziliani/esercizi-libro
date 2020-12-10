@@ -1,7 +1,7 @@
-print("Inserisci tutte le parole polindrome")
-stri = input("Scrivi una parola qualsiasi e vedrai se è polindroma:\n")
-stri2 = stri[::-1]
-if stri == stri2:
-    print("Questa parola è polindroma")
+print("Inserisci una parola")
+vocabolo1 = input("Scrivi una parola qualsiasi e vedrai se è palindroma:\n")
+vocabolo2 = vocabolo1[::-1]
+if vocabolo1 == vocabolo2:
+    print("Questa parola è palindroma")
 else:
-    print("Questa parola NON è polindroma")
+    print("Questa parola NON è palindroma")
