@@ -3,21 +3,18 @@
 visualizza la capitale di una nazione della quale viene fornito da tastiera il nome,
 segnalando con un messaggio di errore il caso in cui la nazione rihiesta non sia compresa nell'elenco
 '''
-
+def trovaCapitale(nat, lN, lC):
+    if nat in lN:
+        pos = lN.index(nat)
+        print(lC[pos])
+    else:
+        print("nazione non presente")
+        
+        
+        
 listaNazioni = ["Regno Unito", "Francia", "Germania", "Italia", "Olanda", "Belgio", "Spagna", "Svizzera", "Irlanda", "Austria"]
 listaCapitali = ["Londra", "Parigi", "Berlino", "Roma", "Amsterdam", "Bruxelles", "Madrid", "Berna", "Dublino", "Vienna"]
-while True:
-    nazione = input("Digitare il nome di una nazione per sapere la sua capitale: ")
-    nazione = nazione.capitalize()
-    if nazione in listaNazioni:
-        i = listaNazioni.index(nazione)
-        print(listaCapitali[i])
-        print("Per stoppare il programma premi stop, per continuare digitare qualsiasi altro comando: ")
-        ripetitore = input()
-        if ripetitore == "stop":
-            break
-    else:
-        print(nazione, "Non si trova nell'elenco delle nazioni registrate. Per stoppare il programma premi stop, per continuare digitare qualsiasi altro comando: ")
-        ripetitore2 = input()
-        if ripetitore2 == "stop":
-            break
+
+
+nat = input("Dimmi nazione").capitalize()
+trovaCapitale(nat, listaNazioni, listaCapitali)
