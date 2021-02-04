@@ -11,25 +11,24 @@ def ordine(d1, d2):
     for k in d1:
         media = 0
         lode = False
+        r = range(len(d1[k]))
         if "l" in d1[k]:
             lode = True
-            for v in range(len(d1[k])-1):
-                media += d1[k][v]
-        else:
-            for v in range(len(d1[k])):
-                media += d1[k][v]
+            r = range(len(d1[k])-1)
+        for v in r:
+            media += d1[k][v]
         if lode:
             media = ceil(media/(len(d1[k])-1))
         else:
             media = floor(media/len(d1[k]))
-        print(media)
+        print(media)    
         if media >= k1 and media < k2:
             d2[(k1, k2-1)].append(k)
         elif media >= k2 and media < k3:
             d2[(k2, k3-1)].append(k)
         elif media >= k3 and media <= massimo:
             d2[(k3, massimo)].append(k)
-    return d2
+    #return d2
 d1 = {
     "Dante" : [30,30,28,"l"],
     "Schopenhauer" : [27,26,24],
@@ -45,4 +44,5 @@ d2 = {
     (k2, k3-1): [],
     (k3, massimo): []
 }
-print(ordine(d1,d2))
+ordine(d1,d2)
+print(d2)
